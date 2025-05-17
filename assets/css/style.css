@@ -1,6 +1,6 @@
 body{
     max-height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .darkMode{
@@ -9,5 +9,7 @@ body{
 .pointer{
     cursor: pointer;
 }
-
+.border{
+    border: 8px;
+}
 
