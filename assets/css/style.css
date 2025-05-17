@@ -1,13 +1,13 @@
 body{
-    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
+.darkMode{
+    background-color: black;
+}
 .pointer{
     cursor: pointer;
 }
 
-.darkMode{
-    background-color: rgba(20, 19, 19, 0.808);
-    color: white;
-}
 
