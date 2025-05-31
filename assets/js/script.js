@@ -1,5 +1,6 @@
 const dark = document.getElementById("dark");
 const light = document.getElementById("light");
+const closebtn = document.getElementById("closebtn")
 
 dark.addEventListener("click",function(){
     const body = document.querySelector("body")
@@ -22,3 +23,6 @@ light.addEventListener("click",function(){
     testomonial.classList.remove("darkMode")
 })
 
+closebtn.addEventListener("click",function(){
+    closebtn.classList.add("close")
+})
