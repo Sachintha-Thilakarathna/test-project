@@ -16,7 +16,7 @@ if ($password == $confirmPassword) {
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header("location:../index.html");
+    // header("location:../index.html");
     echo "logged in:Hello user" ;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -25,4 +25,3 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 
-// INSERT INTO `users`(`email`, `password`) VALUES ('test@gmail.com','123')

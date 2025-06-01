@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <?php 
+    include "../dbconfig.php"
+    ?>
 </head>
 <body class="d-flex flex-column vh-100 justify-content-center align-items-center">
     <div class="border container rounded-3 shadow-sm p-3 mb-5 bg-body-tertiary col-4">
@@ -23,6 +26,7 @@
                 <input name="confirm_password" type="password" class="form-control" id="exampleInputPassword1">
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
+            Already have an account? Click here!<a href="./login.php" class="m-2">log in</a>
             <!-- <input type="submit" value="register"> -->
 
            
@@ -31,9 +35,6 @@
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
-<?php 
-include "../dbconfig.php";    
 
 
-?>
 </html>
