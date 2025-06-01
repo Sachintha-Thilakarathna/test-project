@@ -10,14 +10,14 @@
 
 <body class="d-flex flex-column vh-100 justify-content-center align-items-center">
     <div class="border container rounded-3 shadow-sm p-3 mb-5 bg-body-tertiary col-4">
-        <form action="./loginprocess.php">
+        <form action="../handlers/loginprocess.php" method="$_POST">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
             Don't have an account? Click here!<a href="./register.php" class="m-1">Regsiter</a>
@@ -31,6 +31,7 @@
 
 <?php
 include_once "../dbconfig.php";
+
    
 ?>
 
