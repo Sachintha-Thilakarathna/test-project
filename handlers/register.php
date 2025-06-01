@@ -32,26 +32,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 <?php 
-       include_once "../test%20project/config/dbconfig.php";    
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $confirmPassword = $_POST['confirm_password'];
+include "../dbconfig.php";    
 
-if ($password == $confirmPassword) {
-    $confirmPassword = password_hash($confirmPassword, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (email, password) VALUES ('$email', '$confirmPassword')";
-
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-} else {
-    echo "password not match";
-}
 
 ?>
-
-
-
 </html>
