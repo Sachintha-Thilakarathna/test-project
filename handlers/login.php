@@ -10,7 +10,7 @@
 
 <body class="d-flex flex-column vh-100 justify-content-center align-items-center">
     <div class="border container rounded-3 shadow-sm p-3 mb-5 bg-body-tertiary col-4">
-        <form action="../handlers/loginprocess.php" method="$_POST">
+        <form action="../handlers/loginprocess.php" method="$_GET">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

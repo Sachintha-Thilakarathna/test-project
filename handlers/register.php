@@ -14,7 +14,11 @@
     <div class="border container rounded-3 shadow-sm p-3 mb-5 bg-body-tertiary col-4">
         <form method="POST" action="./registerProcess.php">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                <input name="full_name" type="text" class="form-control" id="exampleInputName1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email Address</label>
                 <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">

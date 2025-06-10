@@ -1,25 +1,30 @@
-const email = 'abc@gmail.com' ;
-const password = '1234';
+const dark = document.getElementById("dark");
+const light = document.getElementById("light");
+const nav = document.getElementById("nav")
+const navbtn = document.getElementById("navbtn")
 
-const loginForm = document.getElementById("loginForm");
+dark.addEventListener("click",function(){
+    const body = document.querySelector("body")
+    const testomnial = document.getElementById("testomonial")
+    body.classList.add("bg-dark")
+    body.classList.remove("text-dark")
+    body.classList.add("text-light")
+    body.classList.remove("bg-white")
+    testomonial.classList.add("bg-dark")
+    testomonial.classList.remove("bg-white")
+})
 
+light.addEventListener("click",function(){
+    const body = document.querySelector("body")
+    const testomonial = document.getElementById("testomonial")
+    body.classList.add("bg-white")
+    body.classList.add("text-dark")
+    body.classList.add("text-light")
+    body.classList.remove("bg-dark")
+    testomonial.classList.add("bg-white")
+    testomonial.classList.remove("bg-dark")
+})
 
-loginForm.addEventListener("submit",function(event){
-    event.preventDefault();
-
-    const para = document.getElementById("errorP");
-    const emailEl = document.getElementById("email").value;
-    const passwordEl = document.getElementById("password").value;
-
-    if(email===emailEl && password===passwordEl){
-        window.location.href = "index.html"
-        window.alert("Login Successfull.")
-    }
-    else if(email ===emailEl || password===passwordEl){
-        para.textContent = "Your email or password are not correct!! Please check again."
-    }
-    else{
-        para.textContent = "ERROR!! Only admin can log in."
-    }
-
+navbtn.addEventListener("click",function(){
+    nav.classList.remove("sm:hidden")
 })
