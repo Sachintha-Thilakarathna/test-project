@@ -16,9 +16,7 @@ if ($password == $confirmPassword) {
     $sql = "INSERT INTO user (full_name,email, password) VALUES ('$fullName','$email', '$confirmPassword')";}
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    // header("location:../index.html");
-    echo "logged in:Hello user" ;
+     header("location:../index.html");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
