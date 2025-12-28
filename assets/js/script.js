@@ -3,6 +3,7 @@ const light = document.getElementById("light");
 const nav = document.getElementById("nav")
 const navbtn = document.getElementById("navbtn")
 
+
 dark.addEventListener("click",function(){
     const body = document.querySelector("body")
     const testomnial = document.getElementById("testomonial")
@@ -28,3 +29,4 @@ light.addEventListener("click",function(){
 navbtn.addEventListener("click",function(){
     nav.classList.remove("sm:hidden")
 })
+
