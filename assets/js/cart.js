@@ -6,26 +6,24 @@
     return 'Rs ' + Number(num).toLocaleString();
   }
 
-  // more robust price parser: strip non-digit, dot and comma then handle comma thousands
+  
   function parsePriceFromString(str){
     if(!str) return 0;
     try{
       const cleaned = String(str).replace(/[^0-9.,]/g, '').trim();
-      // if there are commas and dots, remove commas (thousand separators)
       const normalized = cleaned.replace(/,/g, '');
       const num = parseFloat(normalized);
       return isNaN(num) ? 0 : num;
     }catch(e){ return 0; }
   }
 
-  // quick debug helper
-  function debugLog(...args){
+ function debugLog(...args){
     if(window && window.console) console.log('[CART]', ...args);
   }
 
-  class Cart {
-    constructor(){
-      this.items = {};
+class Cart {
+  constructor(){
+    this.items = {};
       this.load();
     }
     load(){
@@ -89,7 +87,7 @@
           const row = document.createElement('div');
           row.className = 'cart-item';
           row.innerHTML = `
-            <img src="${i.image||'./assets/images/placeholder.png'}" alt="${i.name}">
+            <img src="${i.image||'./assets/images/placeholder.png'}" alt="">
             <div class="meta">
               <h4>${i.name}</h4>
               <div class="price">${formatPrice(i.price)}</div>
@@ -125,10 +123,9 @@
       return {name, price, image};
     }
 
-    // Ensure each product card has stable product data attributes and an Add button
-    document.querySelectorAll('.add-to-cart').forEach(card => {
+    
+  document.querySelectorAll('.add-to-cart').forEach(card => {
       const data = getProductData(card);
-      // store parsed values on the card for quick access
       card.dataset.name = data.name;
       card.dataset.price = data.price;
       card.dataset.image = data.image;
@@ -146,24 +143,23 @@
       }
     });
 
-    // Use event delegation for Add to cart (supports injected buttons and icons inside button)
+
     document.addEventListener('click', (e)=>{
       const addBtn = e.target.closest('.add-cart-btn');
       if(!addBtn) return;
       const card = addBtn.closest('.card') || addBtn.closest('.add-to-cart');
       if(!card){ debugLog('No product card found for add button'); return; }
-      // read from dataset - fallback to parsing DOM
+     
       const name = card.dataset.name || getProductData(card).name;
       let price = Number(card.dataset.price);
       if(!price || isNaN(price)){
-        // try to parse from DOM text (more robust)
         const parsed = getProductData(card).price;
         price = Number(parsed) || 0;
       }
       const image = card.dataset.image || getProductData(card).image || '';
       debugLog('Add clicked', {name, price, image});
       cart.addItem({ name, price, image, qty: 1 });
-      // visual badge bump for feedback
+      
       const cntEl = document.querySelector('#cart-count');
       if(cntEl){ cntEl.classList.add('bump'); setTimeout(()=> cntEl.classList.remove('bump'), 350); }
       const mobileCnt = document.querySelector('#cart-count-mobile');
@@ -191,7 +187,7 @@
     if(cartBtnMobile) cartBtnMobile.addEventListener('click', openCart);
     if(closeCart) closeCart.addEventListener('click', closeCartFn);
 
-    // delegation inside cart panel for qty change and remove
+    // cart item actions
     const itemsContainer = document.querySelector('#cart-items');
     if(itemsContainer){
       itemsContainer.addEventListener('click', (e)=>{
@@ -217,7 +213,7 @@
     });
     if(checkoutBtn) checkoutBtn.addEventListener('click', ()=>{
       if(cart.getTotalItems() === 0){ alert('Cart is empty'); return; }
-      // Simple demo checkout behaviour
+      // Simple demo 
       alert('Thank you! Your order total is ' + formatPrice(cart.getTotal()));
       cart.clear();
       closeCartFn();
@@ -231,7 +227,6 @@
       }
     });
 
-    // expose small API for debugging (optional)
     window.__shopCart = cart;
 
   });
