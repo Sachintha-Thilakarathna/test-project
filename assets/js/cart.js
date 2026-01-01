@@ -133,7 +133,7 @@ class Cart {
       if(!card.querySelector('.add-cart-btn')){
         const wrapper = card.querySelector('.card-body') || card;
         const container = document.createElement('div');
-        container.className = 'mt-3';
+        container.className = 'mt-20';
         const btn = document.createElement('button');
         btn.className = 'btn btn-primary add-cart-btn';
         btn.type = 'button';
